@@ -1,0 +1,983 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84FCDAD1-C06A-4F9D-8095-BAFF060A6A15}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>..\..\..\..\Documents\Tencent Files\3348239019\FileRecv\分页插件\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admins\assets\css\bootstrap.css" />
+    <Content Include="Admins\assets\css\bootstrap.min.css" />
+    <Content Include="Admins\assets\css\demo.css" />
+    <Content Include="Admins\assets\css\main.css" />
+    <Content Include="Admins\assets\css\style.css" />
+    <Content Include="Admins\assets\img\apple-icon.png" />
+    <Content Include="Admins\assets\img\favicon.png" />
+    <Content Include="Admins\assets\img\login-bg.jpg" />
+    <Content Include="Admins\assets\img\logo-dark.png" />
+    <Content Include="Admins\assets\img\profile-bg.png" />
+    <Content Include="Admins\assets\img\user-medium.png" />
+    <Content Include="Admins\assets\img\user.png" />
+    <Content Include="Admins\assets\img\user1.png" />
+    <Content Include="Admins\assets\img\user2.png" />
+    <Content Include="Admins\assets\img\user3.png" />
+    <Content Include="Admins\assets\img\user4.png" />
+    <Content Include="Admins\assets\img\user5.png" />
+    <Content Include="Admins\assets\scripts\klorofil-common.js" />
+    <Content Include="Admins\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Admins\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Admins\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Admins\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Admins\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admins\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Admins\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Admins\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="Admins\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="Admins\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="Admins\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="Admins\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="Admins\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="Admins\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Admins\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admins\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Admins\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="Admins\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="Admins\assets\vendor\jquery\jquery.js" />
+    <Content Include="Admins\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Admins\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="Admins\assets\vendor\linearicons\style.css" />
+    <Content Include="Admins\assets\vendor\notify\notify.js" />
+    <Content Include="Admins\assets\vendor\toastr\toastr.css" />
+    <Content Include="Admins\assets\vendor\toastr\toastr.js" />
+    <Content Include="Admins\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="Admins\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="Admins\Roles\Roles_Add.aspx" />
+    <Content Include="Admins\Roles\Roles_Edit.aspx" />
+    <Content Include="Admins\Roles\Roles_List.aspx" />
+    <Content Include="Admins\Roles\Roles_Remove.aspx" />
+    <Content Include="Admins\Seos\Seos_Add.aspx" />
+    <Content Include="Admins\Seos\Seos_Edit.aspx" />
+    <Content Include="Admins\Seos\Seos_List.aspx" />
+    <Content Include="Admins\Seos\Seos_Remove.aspx" />
+    <Content Include="Admins\SystemMenu\SystemMenus_Add.aspx" />
+    <Content Include="Admins\SystemMenu\SystemMenus_Edit.aspx" />
+    <Content Include="Admins\SystemMenu\SystemMenu_List.aspx" />
+    <Content Include="Admins\SystemMenu\SystemMenu_Delete.aspx" />
+    <Content Include="Admins\UsersPermissions\UsersPermissions_List.aspx" />
+    <Content Include="Admins\Users\Users_Add.aspx" />
+    <Content Include="Admins\Users\Users_Edit.aspx" />
+    <Content Include="Admins\Users\Users_List.aspx" />
+    <Content Include="Admins\Users\Users_Remove.aspx" />
+    <Content Include="Admins\Welcome\Welcome.aspx" />
+    <Content Include="Frontpage\assets\css1\style.css" />
+    <Content Include="Frontpage\assets\images1\2.jpg" />
+    <Content Include="Frontpage\assets\images1\3.jpg" />
+    <Content Include="Frontpage\assets\images1\aaaa.jpg" />
+    <Content Include="Frontpage\assets\images1\banner_1.jpg" />
+    <Content Include="Frontpage\assets\images1\beij_1.jpg" />
+    <Content Include="Frontpage\assets\images1\dianshi.jpg" />
+    <Content Include="Frontpage\assets\images1\ditu.jpg" />
+    <Content Include="Frontpage\assets\images1\ditu2.jpg" />
+    <Content Include="Frontpage\assets\images1\fangdajing.png" />
+    <Content Include="Frontpage\assets\images1\fanhui.jpg" />
+    <Content Include="Frontpage\assets\images1\foot.jpg" />
+    <Content Include="Frontpage\assets\images1\foot.png" />
+    <Content Include="Frontpage\assets\images1\logo_1.png" />
+    <Content Include="Frontpage\assets\images1\shu1.jpg" />
+    <Content Include="Frontpage\assets\images1\shu2.jpg" />
+    <Content Include="Frontpage\assets\images1\sous.jpg" />
+    <Content Include="Frontpage\assets\images1\tiao_1.jpg" />
+    <Content Include="Frontpage\assets\images1\tiao_2.jpg" />
+    <Content Include="Frontpage\assets\images1\tijiao.jpg" />
+    <Content Include="Frontpage\assets\images1\tou_1.png" />
+    <Content Include="Frontpage\assets\images1\tu.png" />
+    <Content Include="Frontpage\assets\images1\tu1.jpg" />
+    <Content Include="Frontpage\assets\images1\tu10.jpg" />
+    <Content Include="Frontpage\assets\images1\tu10.png" />
+    <Content Include="Frontpage\assets\images1\tu11.jpg" />
+    <Content Include="Frontpage\assets\images1\tu11.png" />
+    <Content Include="Frontpage\assets\images1\tu12.jpg" />
+    <Content Include="Frontpage\assets\images1\tu13.jpg" />
+    <Content Include="Frontpage\assets\images1\tu14.jpg" />
+    <Content Include="Frontpage\assets\images1\tu15.jpg" />
+    <Content Include="Frontpage\assets\images1\tu16.jpg" />
+    <Content Include="Frontpage\assets\images1\tu17.jpg" />
+    <Content Include="Frontpage\assets\images1\tu18.jpg" />
+    <Content Include="Frontpage\assets\images1\tu19.jpg" />
+    <Content Include="Frontpage\assets\images1\tu2.jpg" />
+    <Content Include="Frontpage\assets\images1\tu2.png" />
+    <Content Include="Frontpage\assets\images1\tu20.jpg" />
+    <Content Include="Frontpage\assets\images1\tu21.jpg" />
+    <Content Include="Frontpage\assets\images1\tu22.jpg" />
+    <Content Include="Frontpage\assets\images1\tu23.jpg" />
+    <Content Include="Frontpage\assets\images1\tu24.jpg" />
+    <Content Include="Frontpage\assets\images1\tu25.jpg" />
+    <Content Include="Frontpage\assets\images1\tu26.jpg" />
+    <Content Include="Frontpage\assets\images1\tu27.jpg" />
+    <Content Include="Frontpage\assets\images1\tu28.jpg" />
+    <Content Include="Frontpage\assets\images1\tu29.jpg" />
+    <Content Include="Frontpage\assets\images1\tu3.jpg" />
+    <Content Include="Frontpage\assets\images1\tu3.png" />
+    <Content Include="Frontpage\assets\images1\tu30.jpg" />
+    <Content Include="Frontpage\assets\images1\tu31.jpg" />
+    <Content Include="Frontpage\assets\images1\tu32.jpg" />
+    <Content Include="Frontpage\assets\images1\tu33.jpg" />
+    <Content Include="Frontpage\assets\images1\tu34.jpg" />
+    <Content Include="Frontpage\assets\images1\tu35.jpg" />
+    <Content Include="Frontpage\assets\images1\tu36.jpg" />
+    <Content Include="Frontpage\assets\images1\tu37.jpg" />
+    <Content Include="Frontpage\assets\images1\tu4.jpg" />
+    <Content Include="Frontpage\assets\images1\tu4.png" />
+    <Content Include="Frontpage\assets\images1\tu5.jpg" />
+    <Content Include="Frontpage\assets\images1\tu5.png" />
+    <Content Include="Frontpage\assets\images1\tu6.jpg" />
+    <Content Include="Frontpage\assets\images1\tu6.png" />
+    <Content Include="Frontpage\assets\images1\tu7.jpg" />
+    <Content Include="Frontpage\assets\images1\tu7.png" />
+    <Content Include="Frontpage\assets\images1\tu8.jpg" />
+    <Content Include="Frontpage\assets\images1\tu8.png" />
+    <Content Include="Frontpage\assets\images1\tu9.jpg" />
+    <Content Include="Frontpage\assets\images1\tu9.png" />
+    <Content Include="Frontpage\assets\images1\u1.png" />
+    <Content Include="Frontpage\assets\images1\weixin.jpg" />
+    <Content Include="Frontpage\assets\images1\ye.jpg" />
+    <Content Include="Frontpage\assets\images1\ye_1.jpg" />
+    <Content Include="Frontpage\assets\images1\ye_2.jpg" />
+    <Content Include="Frontpage\assets\images1\you.png" />
+    <Content Include="Frontpage\assets\images1\zuo.png" />
+    <Content Include="Frontpage\assets\js1\jquery-1.9.1.min.js" />
+    <Content Include="Frontpage\assets\js1\jquery.foucs.js" />
+    <Content Include="Frontpage\Book\Book_Add.aspx" />
+    <Content Include="Frontpage\Book\Book_Edit.aspx" />
+    <Content Include="Frontpage\Book\Book_List.aspx" />
+    <Content Include="Frontpage\Book\Book_Remove.aspx" />
+    <Content Include="Frontpage\Contact\Contact_Add.aspx" />
+    <Content Include="Frontpage\Contact\Contact_Edit.aspx" />
+    <Content Include="Frontpage\Contact\Contact_List.aspx" />
+    <Content Include="Frontpage\Contact\Contact_Remove.aspx" />
+    <Content Include="Frontpage\Culture\Culture_Add.aspx" />
+    <Content Include="Frontpage\Culture\Culture_Edit.aspx" />
+    <Content Include="Frontpage\Culture\Culture_List.aspx" />
+    <Content Include="Frontpage\Culture\Culture_Remove.aspx" />
+    <Content Include="Frontpage\dinggou.aspx" />
+    <Content Include="Frontpage\dinggou1.aspx" />
+    <Content Include="Frontpage\dinggou2.aspx" />
+    <Content Include="Frontpage\ditu.aspx" />
+    <Content Include="Frontpage\fangying.aspx" />
+    <Content Include="Frontpage\fangying1.aspx" />
+    <Content Include="Frontpage\Get\Get_Add.aspx" />
+    <Content Include="Frontpage\Get\Get_Edit.aspx" />
+    <Content Include="Frontpage\Get\Get_List.aspx" />
+    <Content Include="Frontpage\Get\Get_Remove.aspx" />
+    <Content Include="Frontpage\guanyu.aspx" />
+    <Content Include="Frontpage\guanyu1.aspx" />
+    <Content Include="Frontpage\Hint\Hint_Add.aspx" />
+    <Content Include="Frontpage\Hint\Hint_Edit.aspx" />
+    <Content Include="Frontpage\Hint\Hint_List.aspx" />
+    <Content Include="Frontpage\Hint\Hint_Remove.aspx" />
+    <Content Include="Frontpage\index.aspx" />
+    <Content Include="Frontpage\Intro\Intro_Add.aspx" />
+    <Content Include="Frontpage\Intro\Intro_Edit.aspx" />
+    <Content Include="Frontpage\Intro\Intro_List.aspx" />
+    <Content Include="Frontpage\Intro\Intro_Remove.aspx" />
+    <Content Include="Frontpage\jieshu.aspx" />
+    <Content Include="Frontpage\jieshu1.aspx" />
+    <Content Include="Frontpage\Map\Map_Add.aspx" />
+    <Content Include="Frontpage\Map\Map_Edit.aspx" />
+    <Content Include="Frontpage\Map\Map_List.aspx" />
+    <Content Include="Frontpage\Map\Map_Remove.aspx" />
+    <Content Include="Frontpage\News\News_Add.aspx" />
+    <Content Include="Frontpage\News\News_Edit.aspx" />
+    <Content Include="Frontpage\News\News_List.aspx" />
+    <Content Include="Frontpage\News\News_Remove.aspx" />
+    <Content Include="Frontpage\Order\Order_List.aspx" />
+    <Content Include="Frontpage\Product\Product_Add.aspx" />
+    <Content Include="Frontpage\Product\Product_Edit.aspx" />
+    <Content Include="Frontpage\Product\Product_List.aspx" />
+    <Content Include="Frontpage\Product\Product_Remove.aspx" />
+    <Content Include="Frontpage\Send\Send_Add.aspx" />
+    <Content Include="Frontpage\Send\Send_Edit.aspx" />
+    <Content Include="Frontpage\Send\Send_List.aspx" />
+    <Content Include="Frontpage\Send\Send_Remove.aspx" />
+    <Content Include="Frontpage\Team\Team_Add.aspx" />
+    <Content Include="Frontpage\Team\Team_Edit.aspx" />
+    <Content Include="Frontpage\Team\Team_List.aspx" />
+    <Content Include="Frontpage\Team\Team_Remove.aspx" />
+    <Content Include="Frontpage\tuandui.aspx" />
+    <Content Include="Frontpage\Video\Video_Add.aspx" />
+    <Content Include="Frontpage\Video\Video_Edit.aspx" />
+    <Content Include="Frontpage\Video\Video_List.aspx" />
+    <Content Include="Frontpage\Video\Video_Remove.aspx" />
+    <Content Include="Frontpage\wenhua.aspx" />
+    <Content Include="Frontpage\zixun.aspx" />
+    <Content Include="Frontpage\zixun1.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admins\Roles\Roles_Add.aspx.cs">
+      <DependentUpon>Roles_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_Add.aspx.designer.cs">
+      <DependentUpon>Roles_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_Edit.aspx.cs">
+      <DependentUpon>Roles_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_Edit.aspx.designer.cs">
+      <DependentUpon>Roles_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_List.aspx.cs">
+      <DependentUpon>Roles_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_List.aspx.designer.cs">
+      <DependentUpon>Roles_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_Remove.aspx.cs">
+      <DependentUpon>Roles_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\Roles_Remove.aspx.designer.cs">
+      <DependentUpon>Roles_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Add.aspx.cs">
+      <DependentUpon>Seos_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Add.aspx.designer.cs">
+      <DependentUpon>Seos_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Edit.aspx.cs">
+      <DependentUpon>Seos_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Edit.aspx.designer.cs">
+      <DependentUpon>Seos_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_List.aspx.cs">
+      <DependentUpon>Seos_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_List.aspx.designer.cs">
+      <DependentUpon>Seos_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Remove.aspx.cs">
+      <DependentUpon>Seos_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Seos\Seos_Remove.aspx.designer.cs">
+      <DependentUpon>Seos_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Shared\Backend.Master.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Shared\Backend.Master.designer.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenus_Add.aspx.cs">
+      <DependentUpon>SystemMenus_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenus_Add.aspx.designer.cs">
+      <DependentUpon>SystemMenus_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenus_Edit.aspx.cs">
+      <DependentUpon>SystemMenus_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenus_Edit.aspx.designer.cs">
+      <DependentUpon>SystemMenus_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenu_List.aspx.cs">
+      <DependentUpon>SystemMenu_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenu_List.aspx.designer.cs">
+      <DependentUpon>SystemMenu_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenu_Delete.aspx.cs">
+      <DependentUpon>SystemMenu_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenu_Delete.aspx.designer.cs">
+      <DependentUpon>SystemMenu_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\UsersPermissions\UsersPermissions_List.aspx.cs">
+      <DependentUpon>UsersPermissions_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\UsersPermissions\UsersPermissions_List.aspx.designer.cs">
+      <DependentUpon>UsersPermissions_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Add.aspx.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Add.aspx.designer.cs">
+      <DependentUpon>Users_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Edit.aspx.cs">
+      <DependentUpon>Users_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Edit.aspx.designer.cs">
+      <DependentUpon>Users_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\Users_List.aspx.cs">
+      <DependentUpon>Users_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\Users_List.aspx.designer.cs">
+      <DependentUpon>Users_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Remove.aspx.cs">
+      <DependentUpon>Users_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\Users_Remove.aspx.designer.cs">
+      <DependentUpon>Users_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Welcome\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Welcome\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Add.aspx.cs">
+      <DependentUpon>Book_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Add.aspx.designer.cs">
+      <DependentUpon>Book_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Edit.aspx.cs">
+      <DependentUpon>Book_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Edit.aspx.designer.cs">
+      <DependentUpon>Book_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_List.aspx.cs">
+      <DependentUpon>Book_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_List.aspx.designer.cs">
+      <DependentUpon>Book_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Remove.aspx.cs">
+      <DependentUpon>Book_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Book\Book_Remove.aspx.designer.cs">
+      <DependentUpon>Book_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Add.aspx.cs">
+      <DependentUpon>Contact_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Add.aspx.designer.cs">
+      <DependentUpon>Contact_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Edit.aspx.cs">
+      <DependentUpon>Contact_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Edit.aspx.designer.cs">
+      <DependentUpon>Contact_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_List.aspx.cs">
+      <DependentUpon>Contact_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_List.aspx.designer.cs">
+      <DependentUpon>Contact_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Remove.aspx.cs">
+      <DependentUpon>Contact_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Contact\Contact_Remove.aspx.designer.cs">
+      <DependentUpon>Contact_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Add.aspx.cs">
+      <DependentUpon>Culture_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Add.aspx.designer.cs">
+      <DependentUpon>Culture_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Edit.aspx.cs">
+      <DependentUpon>Culture_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Edit.aspx.designer.cs">
+      <DependentUpon>Culture_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_List.aspx.cs">
+      <DependentUpon>Culture_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_List.aspx.designer.cs">
+      <DependentUpon>Culture_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Remove.aspx.cs">
+      <DependentUpon>Culture_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Culture\Culture_Remove.aspx.designer.cs">
+      <DependentUpon>Culture_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\dinggou.aspx.cs">
+      <DependentUpon>dinggou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\dinggou.aspx.designer.cs">
+      <DependentUpon>dinggou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\dinggou1.aspx.cs">
+      <DependentUpon>dinggou1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\dinggou1.aspx.designer.cs">
+      <DependentUpon>dinggou1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\dinggou2.aspx.cs">
+      <DependentUpon>dinggou2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\dinggou2.aspx.designer.cs">
+      <DependentUpon>dinggou2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\ditu.aspx.cs">
+      <DependentUpon>ditu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\ditu.aspx.designer.cs">
+      <DependentUpon>ditu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\fangying.aspx.cs">
+      <DependentUpon>fangying.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\fangying.aspx.designer.cs">
+      <DependentUpon>fangying.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\fangying1.aspx.cs">
+      <DependentUpon>fangying1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\fangying1.aspx.designer.cs">
+      <DependentUpon>fangying1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Add.aspx.cs">
+      <DependentUpon>Get_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Add.aspx.designer.cs">
+      <DependentUpon>Get_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Edit.aspx.cs">
+      <DependentUpon>Get_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Edit.aspx.designer.cs">
+      <DependentUpon>Get_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_List.aspx.cs">
+      <DependentUpon>Get_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_List.aspx.designer.cs">
+      <DependentUpon>Get_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Remove.aspx.cs">
+      <DependentUpon>Get_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Get\Get_Remove.aspx.designer.cs">
+      <DependentUpon>Get_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\guanyu.aspx.cs">
+      <DependentUpon>guanyu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\guanyu.aspx.designer.cs">
+      <DependentUpon>guanyu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\guanyu1.aspx.cs">
+      <DependentUpon>guanyu1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\guanyu1.aspx.designer.cs">
+      <DependentUpon>guanyu1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Add.aspx.cs">
+      <DependentUpon>Hint_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Add.aspx.designer.cs">
+      <DependentUpon>Hint_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Edit.aspx.cs">
+      <DependentUpon>Hint_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Edit.aspx.designer.cs">
+      <DependentUpon>Hint_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_List.aspx.cs">
+      <DependentUpon>Hint_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_List.aspx.designer.cs">
+      <DependentUpon>Hint_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Remove.aspx.cs">
+      <DependentUpon>Hint_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Hint\Hint_Remove.aspx.designer.cs">
+      <DependentUpon>Hint_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Add.aspx.cs">
+      <DependentUpon>Intro_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Add.aspx.designer.cs">
+      <DependentUpon>Intro_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Edit.aspx.cs">
+      <DependentUpon>Intro_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Edit.aspx.designer.cs">
+      <DependentUpon>Intro_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_List.aspx.cs">
+      <DependentUpon>Intro_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_List.aspx.designer.cs">
+      <DependentUpon>Intro_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Remove.aspx.cs">
+      <DependentUpon>Intro_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Intro\Intro_Remove.aspx.designer.cs">
+      <DependentUpon>Intro_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\jieshu.aspx.cs">
+      <DependentUpon>jieshu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\jieshu.aspx.designer.cs">
+      <DependentUpon>jieshu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\jieshu1.aspx.cs">
+      <DependentUpon>jieshu1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\jieshu1.aspx.designer.cs">
+      <DependentUpon>jieshu1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Add.aspx.cs">
+      <DependentUpon>Map_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Add.aspx.designer.cs">
+      <DependentUpon>Map_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Edit.aspx.cs">
+      <DependentUpon>Map_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Edit.aspx.designer.cs">
+      <DependentUpon>Map_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_List.aspx.cs">
+      <DependentUpon>Map_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_List.aspx.designer.cs">
+      <DependentUpon>Map_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Remove.aspx.cs">
+      <DependentUpon>Map_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Map\Map_Remove.aspx.designer.cs">
+      <DependentUpon>Map_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Add.aspx.cs">
+      <DependentUpon>News_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Add.aspx.designer.cs">
+      <DependentUpon>News_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Edit.aspx.cs">
+      <DependentUpon>News_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Edit.aspx.designer.cs">
+      <DependentUpon>News_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_List.aspx.cs">
+      <DependentUpon>News_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_List.aspx.designer.cs">
+      <DependentUpon>News_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Remove.aspx.cs">
+      <DependentUpon>News_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\News\News_Remove.aspx.designer.cs">
+      <DependentUpon>News_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Order\Order_List.aspx.cs">
+      <DependentUpon>Order_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Order\Order_List.aspx.designer.cs">
+      <DependentUpon>Order_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Add.aspx.cs">
+      <DependentUpon>Product_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Add.aspx.designer.cs">
+      <DependentUpon>Product_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Edit.aspx.cs">
+      <DependentUpon>Product_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Edit.aspx.designer.cs">
+      <DependentUpon>Product_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_List.aspx.cs">
+      <DependentUpon>Product_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_List.aspx.designer.cs">
+      <DependentUpon>Product_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Remove.aspx.cs">
+      <DependentUpon>Product_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Product\Product_Remove.aspx.designer.cs">
+      <DependentUpon>Product_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Add.aspx.cs">
+      <DependentUpon>Send_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Add.aspx.designer.cs">
+      <DependentUpon>Send_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Edit.aspx.cs">
+      <DependentUpon>Send_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Edit.aspx.designer.cs">
+      <DependentUpon>Send_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_List.aspx.cs">
+      <DependentUpon>Send_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_List.aspx.designer.cs">
+      <DependentUpon>Send_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Remove.aspx.cs">
+      <DependentUpon>Send_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Send\Send_Remove.aspx.designer.cs">
+      <DependentUpon>Send_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Shared\FrontShared.Master.cs">
+      <DependentUpon>FrontShared.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Shared\FrontShared.Master.designer.cs">
+      <DependentUpon>FrontShared.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Add.aspx.cs">
+      <DependentUpon>Team_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Add.aspx.designer.cs">
+      <DependentUpon>Team_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Edit.aspx.cs">
+      <DependentUpon>Team_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Edit.aspx.designer.cs">
+      <DependentUpon>Team_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_List.aspx.cs">
+      <DependentUpon>Team_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_List.aspx.designer.cs">
+      <DependentUpon>Team_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Remove.aspx.cs">
+      <DependentUpon>Team_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Team\Team_Remove.aspx.designer.cs">
+      <DependentUpon>Team_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\tuandui.aspx.cs">
+      <DependentUpon>tuandui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\tuandui.aspx.designer.cs">
+      <DependentUpon>tuandui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Add.aspx.cs">
+      <DependentUpon>Video_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Add.aspx.designer.cs">
+      <DependentUpon>Video_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Edit.aspx.cs">
+      <DependentUpon>Video_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Edit.aspx.designer.cs">
+      <DependentUpon>Video_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_List.aspx.cs">
+      <DependentUpon>Video_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_List.aspx.designer.cs">
+      <DependentUpon>Video_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Remove.aspx.cs">
+      <DependentUpon>Video_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\Video\Video_Remove.aspx.designer.cs">
+      <DependentUpon>Video_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\wenhua.aspx.cs">
+      <DependentUpon>wenhua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\wenhua.aspx.designer.cs">
+      <DependentUpon>wenhua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\zixun.aspx.cs">
+      <DependentUpon>zixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\zixun.aspx.designer.cs">
+      <DependentUpon>zixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontpage\zixun1.aspx.cs">
+      <DependentUpon>zixun1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontpage\zixun1.aspx.designer.cs">
+      <DependentUpon>zixun1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admins\Shared\Backend.Master" />
+    <Content Include="Admins\assets\css\demo.css.map" />
+    <Content Include="Admins\assets\css\main.css.map" />
+    <Content Include="Admins\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admins\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admins\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admins\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Admins\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="Admins\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="Admins\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="Admins\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Admins\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Admins\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Admins\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="Admins\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="Admins\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="Admins\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="Frontpage\Shared\FrontShared.Master" />
+    <Content Include="Frontpage\assets\css1\_notes\style.css.mno" />
+    <Content Include="Frontpage\assets\debug.log" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="upload\about\" />
+    <Folder Include="upload\Book\" />
+    <Folder Include="upload\Contact\" />
+    <Folder Include="upload\Get\" />
+    <Folder Include="upload\Hint\" />
+    <Folder Include="upload\Intro\" />
+    <Folder Include="upload\News\" />
+    <Folder Include="upload\Product\" />
+    <Folder Include="upload\Send\" />
+    <Folder Include="upload\Team\" />
+    <Folder Include="upload\users\" />
+    <Folder Include="upload\Video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f14f5f96-75f8-49f0-9d55-291462ca2d18}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1747573e-f4cf-43fb-85d1-1293fe1d2f12}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55079</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55079/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
